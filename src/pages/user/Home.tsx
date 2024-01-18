@@ -9,6 +9,7 @@ import useI18n from "@/hooks/useI18n";
 import { Link, useNavigate } from "react-router-dom";
 import Spinner from "@/components/ui/Spinner";
 import ChatService from "@/services/chat.service";
+import { FaPhoneFlip } from "react-icons/fa6";
 
 const Home = () => {
   const { t } = useI18n();
@@ -64,6 +65,14 @@ const Home = () => {
                 <Button className="flex gap-2" variant={"success"}>
                   <span>{t("user.home.whatsapp")}</span>
                   <BsFillChatDotsFill />
+                </Button>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <Button className="flex gap-2" variant={"outline"}>
+                  <span>920013736</span>
+                  <FaPhoneFlip />
                 </Button>
               </a>
             </div>

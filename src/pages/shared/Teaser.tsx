@@ -3,14 +3,23 @@ import Spinner from "@/components/ui/Spinner";
 import { Button } from "@/components/ui/button";
 import useI18n from "@/hooks/useI18n";
 import Service from "@/interfaces/requestServices";
+import ChatService from "@/services/chat.service";
 import ServiceService from "@/services/services.service";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Teaser = () => {
   const { t } = useI18n();
+
+  const navigate = useNavigate();
+
+  const handleCreateChat = async () => {
+    const chat = await ChatService.createChat({});
+    navigate(`/chat/${chat.id}`);
+  };
+
   const { isLoading, data: services } = useQuery("services", () =>
     ServiceService.listServices(1)
   );
@@ -44,12 +53,9 @@ const Teaser = () => {
           </div>
           <div className="flex flex-wrap gap-6">
             <div>
-              <a href="/contact">
-                <Button className="flex gap-2">
-                  <span>{t("user.home.chat")}</span>
-                  <BsFillChatDotsFill />
-                </Button>
-              </a>
+              <Button className="flex gap-2" onClick={handleCreateChat}>
+                <span>{t("user.home.chat")}</span> <BsFillChatDotsFill />
+              </Button>
             </div>
             <div>
               <a
