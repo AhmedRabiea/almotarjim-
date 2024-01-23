@@ -5,7 +5,7 @@ import ChatService from "@/services/chat.service";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const SingleChat = () => {
+const InternalChat = () => {
   const pusher = usePusher();
   const { id = "" } = useParams();
   const [chat, setChat] = useState<Partial<ChatType>>({});
@@ -44,6 +44,7 @@ const SingleChat = () => {
     <Chat {...chat} onSend={handleSend}>
       <Chat.Header>
         <Chat.Header.Title></Chat.Header.Title>
+        <Chat.Header.Actions></Chat.Header.Actions>
       </Chat.Header>
       <Chat.Body />
       <Chat.Footer />
@@ -51,4 +52,4 @@ const SingleChat = () => {
   );
 };
 
-export default SingleChat;
+export default InternalChat;

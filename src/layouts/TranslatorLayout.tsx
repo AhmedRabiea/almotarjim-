@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { HiHome, HiReceiptTax } from "react-icons/hi";
+import { HiChat, HiHome, HiReceiptTax } from "react-icons/hi";
 import Sidebar from "@/containers/Sidebar";
 import SidebarItem from "@/components/SidebarItem";
 import LanguageDropdown from "@/components/LanguageDropdown";
@@ -16,6 +16,10 @@ const TranslatorLayout = () => {
             <span className="hidden lg:block">
               {t("translator.layout.dashboard")}
             </span>
+          </SidebarItem>
+          <SidebarItem to="/internal-chat" end>
+            <HiChat />
+            <span className="hidden lg:block">Almotarjim Chat</span>
           </SidebarItem>
           <SidebarItem to="/request">
             <HiReceiptTax />

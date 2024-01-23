@@ -58,7 +58,7 @@ const Contact = () => {
                       </p>
                     </div>
                     <p className="font-normal text-gray-600 text-base">
-                      920033074+
+                      920013736
                     </p>
                   </div>
                   <div className="flex flex-col gap-3 p-5 border hover:shadow-xl transition-all border-primary rounded-lg">

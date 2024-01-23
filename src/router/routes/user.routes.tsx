@@ -3,12 +3,12 @@ import { RouteObject } from "react-router-dom";
 // pages
 import Error404 from "@/pages/shared/error/Error404";
 import CreateRequest from "@/pages/user/CreateRequest";
-import Home from "@/pages/user/Home";
 import Requests from "@/pages/user/Requests";
 import SingleChat from "@/pages/user/SingleChat";
 import SingleRequest from "@/pages/user/SingleRequest";
 import UserLayout from "@/layouts/UserLayout";
 import ChooseService from "@/pages/user/ChooseService";
+import Home from "@/pages/user/Home";
 
 const userRoutes: RouteObject[] = [
   {

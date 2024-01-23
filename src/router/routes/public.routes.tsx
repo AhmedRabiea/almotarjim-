@@ -7,6 +7,7 @@ import Register from "@/pages/shared/Register";
 import Teaser from "@/pages/shared/Teaser";
 import Error404 from "@/pages/shared/error/Error404";
 import Contact from "@/pages/user/Contact";
+import Landing from "@/pages/shared/Landing";
 
 const publicRoutes: RouteObject[] = [
   {
@@ -15,6 +16,10 @@ const publicRoutes: RouteObject[] = [
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "landing",
+        element: <Landing />,
       },
       {
         path: "contact",

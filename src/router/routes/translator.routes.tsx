@@ -7,6 +7,9 @@ import SingleRequest from "@/pages/translator/SingleRequest";
 import SubmitRequest from "@/pages/translator/SubmitRequest";
 import Error404 from "@/pages/shared/error/Error404";
 import TranslatorLayout from "@/layouts/TranslatorLayout";
+import InternalUsers from "@/pages/translator/InternalUsers";
+import InternalChat from "@/pages/translator/InternalChat";
+import SingleChat from "@/pages/translator/SingleChat";
 
 const translatorRoutes: RouteObject[] = [
   {
@@ -16,6 +19,13 @@ const translatorRoutes: RouteObject[] = [
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "internal-chat",
+        children: [
+          { path: "", element: <InternalUsers /> },
+          { path: ":id", element: <InternalChat /> },
+        ],
       },
       {
         path: "request",
@@ -31,6 +41,15 @@ const translatorRoutes: RouteObject[] = [
           {
             path: ":id/submit",
             element: <SubmitRequest />,
+          },
+        ],
+      },
+      {
+        path: "chat",
+        children: [
+          {
+            path: ":id",
+            element: <SingleChat />,
           },
         ],
       },

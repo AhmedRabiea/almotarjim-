@@ -5,8 +5,8 @@ import ellipse from "../../assets/auth/Ellipse18.svg";
 import ellipse2 from "../../assets/auth/Ellipse19.svg";
 import ellipse3 from "../../assets/auth/Ellipsedown.svg";
 import LanguageDropdown from "@/components/LanguageDropdown";
-import AuthService from "@/services/auth.service";
-import { useNavigate } from "react-router-dom";
+// import AuthService from "@/services/auth.service";
+// import { useNavigate } from "react-router-dom";
 
 import about from "@/assets/about.jpg";
 import logo from "@/assets/logo.png";
@@ -14,21 +14,21 @@ import logo from "@/assets/logo.png";
 import useI18n from "@/hooks/useI18n";
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { t, language } = useI18n();
 
-  const handleGetStarted = async () => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      const isValidToken = await AuthService.getIsValidToken();
-      console.log(isValidToken);
-      if (isValidToken) {
-        navigate("/dashboard");
-        return;
-      }
-    }
-    navigate("/login");
-  };
+  // const handleGetStarted = async () => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     const isValidToken = await AuthService.getIsValidToken();
+  //     console.log(isValidToken);
+  //     if (isValidToken) {
+  //       navigate("/landing");
+  //       return;
+  //     }
+  //   }
+  //   navigate("/landing");
+  // };
 
   return (
     <div className="relative min-h-screen m-auto">
@@ -64,17 +64,16 @@ const Home = () => {
             <div className="col-span-2 md:col-span-1">
               <h1 className="text-4xl font-bold ">{t("home.title")}</h1>
               <p className="py-10">{t("home.content")}</p>
-              <Button
-                className="flex items-center gap-2"
-                onClick={handleGetStarted}
-              >
-                {t("home.button")}
-                {language.dir === "ltr" ? (
-                  <HiArrowNarrowRight />
-                ) : (
-                  <HiArrowNarrowLeft />
-                )}
-              </Button>
+              <a href="/landing">
+                <Button className="flex items-center gap-2">
+                  {t("home.button")}
+                  {language.dir === "ltr" ? (
+                    <HiArrowNarrowRight />
+                  ) : (
+                    <HiArrowNarrowLeft />
+                  )}
+                </Button>
+              </a>
             </div>
             <div className="col-span-2 md:col-span-1 order-first md:order-last">
               <img

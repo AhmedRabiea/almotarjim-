@@ -9,6 +9,8 @@ import SingleChat from "@/pages/supervisor/SingleChat";
 import Error404 from "@/pages/shared/error/Error404";
 import SupervisorLayout from "@/layouts/SupervisorLayout";
 import CreateRequest from "@/pages/supervisor/CreateRequest";
+import InternalUsers from "@/pages/supervisor/InternalUsers";
+import InternalChat from "@/pages/supervisor/InternalChat";
 
 const supervisorRoutes: RouteObject[] = [
   {
@@ -18,6 +20,13 @@ const supervisorRoutes: RouteObject[] = [
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "internal-chat",
+        children: [
+          { path: "", element: <InternalUsers /> },
+          { path: ":id", element: <InternalChat /> },
+        ],
       },
       {
         path: "request",

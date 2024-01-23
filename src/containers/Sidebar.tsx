@@ -29,7 +29,7 @@ const Sidebar = ({ children }: SidebarProps) => {
           <img src={user?.image} alt="src" />
           <span className="details hidden lg:flex flex-col gap-1 items-center text-center">
             <p className="text-sm">{t(`shared.roles.${role}`)}</p>
-            <h3>{user?.name}</h3>
+            <h3>Welcome To Almotajim</h3>
             <a
               className="text-sm text-primary-600"
               href={`mailto:${user?.email}`}

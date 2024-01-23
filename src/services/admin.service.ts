@@ -113,6 +113,18 @@ const getTranslatorHistory = async (id: string) => {
   return res.data;
 };
 
+const getInternalUsers = async () => {
+  const res = await api.get("/internal-users");
+  return res.data;
+};
+
+const createInternalUserChat = async (id: string) => {
+  const res = await api.post("/chats/create-internal-chat", {
+    receiver_id: id,
+  });
+
+  return res.data;
+};
 const AdminService = {
   getUsers,
   getAgents,
@@ -130,6 +142,8 @@ const AdminService = {
   getAgentHistory,
   getClientHistory,
   getTranslatorHistory,
+  getInternalUsers,
+  createInternalUserChat,
 };
 
 export default AdminService;
