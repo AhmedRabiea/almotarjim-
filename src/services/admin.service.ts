@@ -108,6 +108,10 @@ const getClientHistory = async (id: string) => {
   const res = await api.get(`/statistics/client-history/${id}`);
   return res.data;
 };
+const getTranslatorHistory = async (id: string) => {
+  const res = await api.get(`/statistics/translator-pages/${id}`);
+  return res.data;
+};
 
 const AdminService = {
   getUsers,
@@ -125,6 +129,7 @@ const AdminService = {
   getUser,
   getAgentHistory,
   getClientHistory,
+  getTranslatorHistory,
 };
 
 export default AdminService;

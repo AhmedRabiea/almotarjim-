@@ -421,6 +421,12 @@
         "error": "خطأ",
         "someFieldsAreInvalid": "بعض الحقول غير صالحة",
         "updateNewTranslator": "تحديث مترجم جديد"
+      },
+      "viewTranslator": {
+        "pagesNumber": "عدد الصفحات",
+        "totalPages": "إجمالي الصفحات",
+        "id": "بطاقة تعريف",
+        "createdAt": "أنشئت في"
       }
     }
   }

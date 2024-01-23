@@ -22,6 +22,7 @@ import UpdateSupervisor from "@/pages/admin/update/UpdateSupervisor";
 import UpdateTranslator from "@/pages/admin/update/UpdateTranslator";
 import ViewAgent from "@/pages/admin/view/ViewAgent";
 import ViewClient from "@/pages/admin/view/ViewClient";
+import ViewTranslator from "@/pages/admin/view/ViewTranslator";
 
 const adminRoutes: RouteObject[] = [
   {
@@ -104,6 +105,10 @@ const adminRoutes: RouteObject[] = [
           {
             path: "update/:id",
             element: <UpdateTranslator />,
+          },
+          {
+            path: ":id",
+            element: <ViewTranslator />,
           },
         ],
       },

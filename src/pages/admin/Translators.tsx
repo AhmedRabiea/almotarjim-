@@ -2,7 +2,7 @@ import { DataTable } from "@/components/Datatable";
 import { Button } from "@/components/ui/button";
 import useI18n from "@/hooks/useI18n";
 import { ColumnDef } from "@tanstack/react-table";
-import { HiPlus } from "react-icons/hi";
+import { HiEye, HiPlus } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import Spinner from "@/components/ui/Spinner";
@@ -36,6 +36,9 @@ const TranslatorsActions = ({ row, refetch }: any) => {
 
   return (
     <div className="flex gap-4">
+      <Link to={`/translators/${row.original.id}`}>
+        <Button>{loading ? <Spinner /> : <HiEye />}</Button>
+      </Link>
       <Link to={`/translators/update/${row.original.id}`}>
         <Button>{loading ? <Spinner /> : <HiPencil />}</Button>
       </Link>
@@ -75,7 +78,7 @@ const Translators = () => {
           : t("admin.translators.offline"),
     },
     {
-      accessorKey: "translations_number",
+      accessorKey: "translation_pages.total_pages",
       header: t("admin.translators.numberOfTranslations"),
     },
     {

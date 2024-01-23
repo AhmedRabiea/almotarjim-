@@ -421,6 +421,12 @@
         "error": "Error",
         "someFieldsAreInvalid": "Some fields are invalid",
         "updateNewTranslator": "Update New translator"
+      },
+      "viewTranslator": {
+        "pagesNumber": "Pages Number",
+        "totalPages": "Total Pages",
+        "id": "ID",
+        "createdAt": "Created At"
       }
     }
   }
